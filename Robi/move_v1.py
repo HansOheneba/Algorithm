@@ -1,4 +1,4 @@
-move = input('What Direction would you like to move?\n')
+move = input('What Direction would you like to move Robi?\n')
 
 upper = move.upper()
 

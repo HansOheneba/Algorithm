@@ -1,0 +1,16 @@
+
+Iterate through commands in an array
+if command is L and D = T set D = L 
+                    D = L set D = B 
+                    D = B set D = R 
+                    else set D = T
+
+if command is R and D = T set D = R 
+                    D = R set D = B 
+                    D = B set D = L 
+                    else set D = T
+
+if command is F then 
+                move to the next character in the array and    
+                add the number to distance
+
