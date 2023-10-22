@@ -1,13 +1,18 @@
+import random
+
 movement = input('Enter Command\n')
 
 move = movement.upper()
 
 X = 0
 Y = 0
-D = 'T' 
+D = 'T'
 B = 0
 
 i = 0
+
+bonusX = random.randint(-100, 100)
+bonusY = random.randint(-100, 100)
 
 while i < len(move):
     command = move[i]
@@ -21,7 +26,7 @@ while i < len(move):
             D = 'R'
         else:
             D = 'T'
-            
+
     elif command == 'R':
         if D == 'T':
             D = 'R'
@@ -31,7 +36,7 @@ while i < len(move):
             D = 'L'
         else:
             D = 'T'
-            
+
     elif command == 'F':
         distance = ''
         i += 1
@@ -39,7 +44,6 @@ while i < len(move):
         while i < len(move) and move[i].isdigit():
             distance += move[i]
             i += 1
-
 
         if distance:
             distance = int(distance)
@@ -51,10 +55,14 @@ while i < len(move):
                 X -= distance
             else:
                 X += distance
-                
+
+            if X == bonusX and Y == bonusY:
+                B = 1
+
         if i < len(move) and not move[i].isdigit():
             i -= 1
 
     i += 1
 
-print(f"Result:  X:{X}, Y:{Y}, D:{D}")
+print(f"Result: X:{X}, Y:{Y}, D:{D}, B:{B}")
+print(bonusX,bonusY)
